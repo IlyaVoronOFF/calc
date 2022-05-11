@@ -1,0 +1,552 @@
+<!DOCTYPE HTML PUBLIC  "-//W3C//DTD HTML 4.01//EN" "www.w3.org/TR/html4/strict.dtd">
+<html xmlns="//www.w3.org/1999/xhtml">
+
+<head>
+    <link rel="stylesheet" href="./style.css">
+    <script type='text/javascript' src='./js/jquery.min.js'></script>
+</head>
+
+<body>
+    <div class="row">
+        <div class="large-12 columns">
+            <div id='calculater'>
+                <div class='row'>
+                    <div class='large-4 columns'>
+                        <h5><b>Исходные данные</b></h5>
+                        <table class='parament'>
+                            <tr>
+                                <td>Габариты</td>
+                                <td>
+                                    <div class='inputgroup'>
+                                        <span><input class='validnumber changing' id='gaba' value='0' maxlength='4' type='text' placeholder='от'></span>
+                                        <span style="margin: 0 10px 0 7px; color: #ababab;">x</span>
+                                        <span><input class='validnumber changing' id='gabb' value='0' maxlength='4' max='999' type='text' placeholder='до'></span>
+                                    </div>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Этажность</td>
+                                <td>
+                                    <div class='inputalone'>
+                                        <span><input class='validnumber changing' id='etag' value='0' type='text' maxlength='3' placeholder=''></span>
+                                    </div>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Высота цоколя</td>
+                                <td>
+                                    <div class='inputalone'>
+                                        <span><input class='validnumber changing' id='viscok' value='0' type='text' maxlength='3' placeholder=''></span>
+                                    </div>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Высота этажа</td>
+                                <td>
+                                    <div class='inputalone'>
+                                        <span><input class='validnumber changing' id='visetag'  value='0' type='text' maxlength='3' placeholder=''></span>
+                                    </div>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Высота конька</td>
+                                <td>
+                                    <div class='inputalone'>
+                                        <span><input id='heighthorse' class='validnumber changing'  value='0' type='text' maxlength='3' placeholder=''></span>
+                                    </div>
+
+                                </td>
+                            </tr>
+                            <tr class='mansard_param'>
+                                <td>Высота стен</td>
+                                <td>
+                                    <div class='inputalone'>
+                                        <span><input class='validnumber changing' id='vissten' value='0' type='text' maxlength='3' placeholder=''></span>
+                                    </div>
+
+                                </td>
+                            </tr>
+                        </table>
+                        <table class='parament'>
+                            <tr>
+                                <td><input id='mansarda' class='changing' type='checkbox'><label for='mansarda'>Мансарда</label></td>
+                                <td><input id='cokol' class='changing' type='checkbox'><label for='cokol'>Цокольный этаж</label></td>
+                            </tr>
+                        </table>
+
+                    </div>
+                    <div class='large-8 columns'>
+                        <h5><b>Рассчитанные параметры</b></h5>
+                        <div class='row'>
+                            <div class='large-6 columns'>
+                                <table class='parament parament2'>
+                                    <tr>
+                                        <td>Периметр, м/пог</td>
+                                        <td>
+                                            <div class='inputalone'>
+                                                <span><input id='perimetr' type='text' maxlength='3' placeholder=''></span>
+                                            </div>
+
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Несущие стены, м/пог</td>
+                                        <td>
+                                            <div class='inputalone'>
+                                                <span><input id='nes_sten' type='text' maxlength='3' placeholder=''></span>
+                                            </div>
+
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Площадь основания</td>
+                                        <td>
+                                            <div class='inputalone'>
+                                                <span><input id='plosnova' type='text' maxlength='3' placeholder=''></span>
+                                            </div>
+
+                                        </td>
+                                    </tr>
+
+                                    <tr class='mansard_param'>
+                                        <td>Площ. мансардного эт.</td>
+                                        <td>
+                                            <div class='inputalone'>
+                                                <span><input id='plmans' type='text' maxlength='3' placeholder=''></span>
+                                            </div>
+
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Общая площадь</td>
+                                        <td>
+                                            <div class='inputalone'>
+                                                <span><input type='text' id='obpl' maxlength='3' placeholder=''></span>
+                                            </div>
+
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Площадь фронтона</td>
+                                        <td>
+                                            <div class='inputalone'>
+                                                <span><input id='plfronton' type='text' maxlength='3' placeholder=''></span>
+                                            </div>
+
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Площадь крыши</td>
+                                        <td>
+                                            <div class='inputalone'>
+                                                <span><input type='text' id='plroof' maxlength='3' placeholder=''></span>
+                                            </div>
+
+                                        </td>
+                                    </tr>
+                                    <tr class='mansard_param'>
+                                        <td>Пл. стен манс. этажа</td>
+                                        <td>
+                                            <div class='inputalone'>
+                                                <span><input id='plstenmansarda' type='text'  maxlength='3' placeholder=''></span>
+                                            </div>
+
+                                        </td>
+                                    </tr>
+
+
+                                </table>
+
+                            </div>
+                            <div class='large-6 columns'>
+
+                                <table class='parament parament2'>
+                                    <tr>
+                                        <td>Площадь внешних стен под отделку</td>
+                                        <td>
+                                            <div class='inputalone'>
+                                                <span><input id='plvnstenot' type='text' maxlength='3' placeholder=''></span>
+                                            </div>
+
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Площадь несущих стен</td>
+                                        <td>
+                                            <div class='inputalone'>
+                                                <span><input id='plnessten' type='text' maxlength='3' placeholder=''></span>
+                                            </div>
+
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Площадь (длина) внутренних стен</td>
+                                        <td>
+                                            <div class='inputalone'>
+                                                <span><input type='text' id='plvnutsten' maxlength='3' placeholder=''></span>
+                                            </div>
+
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Площадь (под отделку) внутренних стен</td>
+                                        <td>
+                                            <div class='inputalone'>
+                                                <span><input type='text' id='plvnutstenot' maxlength='3' placeholder=''></span>
+                                            </div>
+
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Площадь поверхн. под обл. цоколя</td>
+                                        <td>
+                                            <div class='inputalone'>
+                                                <span><input type='text' id='ploblcok' maxlength='3' placeholder=''></span>
+                                            </div>
+
+                                        </td>
+                                    </tr>
+
+                                </table>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <div class='row margintop10'>
+                    <div class='large-12 columns'>
+                        <h5><b>Технологии и материалы</b></h5>
+                    </div>
+                </div>
+
+                <div class='row margintop10'>
+
+                    <div class='large-4 columns'>
+                        <div class='badgers'>
+                            <span class='namebad'>Стена несущая</span>
+                            <span id='priceNes' class='costbad'>0 руб.</span>
+                        </div>
+                        <table class='checkedtab'>
+
+
+
+                            <tr>
+                                <td><input checked class='changing' name='matsten' id='matsten1' type='radio' value='4800'></td>
+                                <td><label for='matsten1'>Дюрисол</label></td>
+                            </tr>
+                            <tr>
+                                <td><input class='changing' name='matsten' id='matsten2' type='radio' value='2775'></td>
+                                <td><label for='matsten2'>Пенополистирол</label></td>
+                            </tr>
+                            <tr>
+                                <td><input class='changing' name='matsten' id='matsten3' type='radio' value='2625'></td>
+                                <td><label for='matsten3'>Газобетон 1 блок</label></td>
+                            </tr>
+                            <tr>
+                                <td><input class='changing' name='matsten' id='matsten4' type='radio' value='2010'></td>
+                                <td><label for='matsten4'>Кирпич 1 шт</label></td>
+                            </tr>
+                            <tr>
+                                <td><input class='changing' name='matsten' id='matsten5' type='radio' value='3000'></td>
+                                <td><label for='matsten5'>Кирпич 1,5 шт</label></td>
+                            </tr>
+                            <tr>
+                                <td><input class='changing' name='matsten' id='matsten6' type='radio' value='3900'></td>
+                                <td><label for='matsten6'>Кирпич 2,0 шт</label></td>
+                            </tr>
+                            <tr>
+                                <td><input class='changing' name='matsten' id='matsten7' type='radio' value='24000'></td>
+                                <td><label for='matsten7'>ЛСТК (без фунд., полов, инж.сист.)</label></td>
+                            </tr>
+                            <tr>
+                                <td><input class='changing' name='matsten' id='matsten48' type='radio' value='2625'></td>
+                                <td><label for='matsten48'>Керамоблок</label></td>
+                            </tr>
+
+                        </table>
+                    </div>
+
+                    <div class='large-4 columns'>
+                        <div class='badgers'>
+                            <span class='namebad'>Отделка наружняя</span>
+                            <span id='priceOrNar' class='costbad'>0 руб.</span>
+                        </div>
+
+                        <table class='checkedtab'>
+
+                            <tr>
+                                <td><input checked class='changing' id='otdnar8' name='otdnar' type='radio' value='2325'></td>
+                                <td><label for='otdnar8'>Облицовочный кирпич</label></td>
+                            </tr>
+                            <tr>
+                                <td><input class='changing' id='otdnar9' name='otdnar' type='radio' value='825'></td>
+                                <td><label for='otdnar9'>Штукатурка</label></td>
+                            </tr>
+                            <tr>
+                                <td><input class='changing' id='otdnar10' name='otdnar' type='radio' value='1500'></td>
+                                <td><label for='otdnar10'>Структурная штукатурка, окраска</label></td>
+                            </tr>
+                            <tr>
+                                <td><input class='changing' id='otdnar11' name='otdnar' type='radio' value='1650'></td>
+                                <td><label for='otdnar11'>Дикий камень(кирпич)</label></td>
+                            </tr>
+                            <tr>
+                                <td><input class='changing' id='otdnar12' name='otdnar' type='radio' value='825'></td>
+                                <td><label for='otdnar12'>Сайдинг</label></td>
+                            </tr>
+
+                        </table>
+                    </div>
+                    <div class='large-4 columns'>
+                        <div class='badgers'>
+                            <span class='namebad'>Фундамент</span>
+                            <span id='priceFunda' class='costbad'>0 руб.</span>
+                        </div>
+
+                        <table class='checkedtab'>
+
+                            <tr>
+                                <td><input checked class='changing' id='funda13' name='funda' type='radio' value='3000'></td>
+                                <td><label for='funda13'>Буронабивной (свайно-ростверковый) (м/пог)</label></td>
+                            </tr>
+                            <tr>
+                                <td><input class='changing' id='funda14' name='funda' type='radio' value='10500'></td>
+                                <td><label for='funda14'>Ленточный (м/пог)</label></td>
+                            </tr>
+                            <tr>
+                                <td><input class='changing' id='funda15' name='funda' type='radio' value='15000'></td>
+                                <td><label for='funda15'>Цокольный этаж (блоки ФБС)</label></td>
+                            </tr>
+                            <tr>
+                                <td><input class='changing' id='funda16' name='funda' type='radio' value='4500'></td>
+                                <td><label for='funda16'>Плитный ж/б фундамент (плита)</label></td>
+                            </tr>
+
+                        </table>
+
+                    </div>
+                </div>
+
+
+                <div class='row margintop10'>
+                    <div class='large-4 columns'>
+                        <div class='badgers'>
+                            <span class='namebad'>Перекрытия</span>
+                            <span id='pricePerecrit' class='costbad'>0 руб.</span>
+                        </div>
+
+                        <table class='checkedtab'>
+                            <tr>
+                                <td><input class='changing' id='perec17' name='perec' type='radio' value='750'></td>
+                                <td><label for='perec17'>Деревянные</label></td>
+
+
+                            </tr>
+                            <tr>
+                                <td><input checked class='changing' id='perec18' name='perec' type='radio' value='1050'></td>
+                                <td><label for='perec18'>Мет балка+дер</label></td>
+
+
+                            </tr>
+                            <tr>
+                                <td><input class='changing' id='perec19' name='perec' type='radio' value='1500'></td>
+                                <td><label for='perec19'>Плиты перекр. (сборн. жел-бет.)</label></td>
+
+
+                            </tr>
+                            <tr>
+                                <td class='talbot'><input class='changing' id='perecdop20' name='perecdop' type='checkbox' value='1200'></td>
+                                <td class='ital'><label for='perecdop20'>Армо-пояс, мп</label></td>
+
+
+                            </tr>
+                            <tr>
+                                <td><input class='changing' id='perec21' name='perec' type='radio' value='3000'></td>
+                                <td><label for='perec21'>Монолит. перекрытие</label></td>
+
+
+                            </tr>
+
+                        </table>
+                    </div>
+                    <div class='large-4 columns'>
+                        <div class='badgers'>
+                            <span class='namebad'>Внутр. перегородки</span>
+                            <span id='priceVnPer' class='costbad'>0 руб.</span>
+                        </div>
+
+                        <table class='checkedtab'>
+                            <tr>
+                                <td><input checked class='changing' id='vnutpereg22' name='vnutpereg' type='radio' value='1200'></td>
+                                <td><label for='vnutpereg22'>Да</label></td>
+                            </tr>
+                            <tr>
+                                <td><input class='changing' id='vnutpereg23' name='vnutpereg' type='radio' value='0'></td>
+                                <td><label for='vnutpereg23'>Нет</label></td>
+                            </tr>
+
+                        </table>
+
+                    </div>
+                    <div class='large-4 columns'>
+                        <div class='badgers'>
+                            <span class='namebad'>Полы 1-го этажа</span>
+                            <span id='pricePol' class='costbad'>0 руб.</span>
+                        </div>
+
+                        <table class='checkedtab'>
+                            <tr>
+                                <td><input class='changing' id='pol24' name='pol' type='radio' value='750'></td>
+                                <td><label for='pol24'>Деревянный пол</label></td>
+                            </tr>
+                            <tr>
+                                <td><input class='changing' id='pol25' name='pol' type='radio' value='2250'></td>
+                                <td><label for='pol25'>Бетонный пол по грунту</label></td>
+                            </tr>
+
+                        </table>
+                    </div>
+                </div>
+
+
+                <div class='row margintop10'>
+                    <div class='large-4 columns'>
+                        <div class='badgers'>
+                            <span class='namebad'>Крыша</span>
+                            <span id='priceKrisha' class='costbad'>0 руб.</span>
+                        </div>
+
+                        <table class='checkedtab'>
+                            <tr>
+                                <td><input checked class='changing' id='krisha26' name='krisha' type='radio' value='4350'></td>
+                                <td><label for='krisha26'>Металлочерепица, м2</label></td>
+                            </tr>
+                            <tr>
+                                <td><input class='changing' id='krisha27' name='krisha' type='radio' value='5100'></td>
+                                <td><label for='krisha27'>Мягкая кровля, м2</label></td>
+                            </tr>
+                            <tr>
+                                <td class='talbot'><input class='changing' id='vodastock28' name='vodastock' type='checkbox' value='1125'></td>
+                                <td class='ital'><label for='vodastock28'>Водосточная система, м.п.</label></td>
+                            </tr>
+
+                        </table>
+                    </div>
+                    <div class='large-4 columns'>
+                        <div class='badgers'>
+                            <span class='namebad'>Лестница <span id='collests'></span></span>
+                            <span id='priceLest' class='costbad'>0 руб.</span>
+                        </div>
+
+                        <table class='checkedtab'>
+                            <tr>
+                                <td><input checked class='changing' id='lest29' name='lest' type='radio' value='60000'></td>
+                                <td><label for='lest29'>Деревянная</label></td>
+                            </tr>
+                            <tr>
+                                <td><input class='changing' id='lest30' name='lest' type='radio' value='105000'></td>
+                                <td><label for='lest30'>Жел/бет</label></td>
+                            </tr>
+
+                        </table>
+
+                    </div>
+                    <div class='large-4 columns'>
+                        <div class='badgers'>
+                            <span class='namebad'>Окна + мет.двери</span>
+                            <span id='priceDver' class='costbad'>0 руб.</span>
+                        </div>
+
+                        <table class='checkedtab'>
+                            <tr>
+                                <td><input checked class='changing' id='dver31' name='dver' type='radio' value='1050'></td>
+                                <td><label for='dver31'>Да</label></td>
+                            </tr>
+                            <tr>
+                                <td><input class='changing' id='dver32' name='dver' type='radio' value='0'></td>
+                                <td><label for='dver32'>Нет</label></td>
+                            </tr>
+
+                        </table>
+                    </div>
+                </div>
+
+
+                <div class='row margintop10'>
+                    <div class='large-4 columns'>
+                        <div class='badgers'>
+                            <span class='namebad'>Внутренняя отделка</span>
+                            <span id='priceVnutOt' class='costbad'>0 руб.</span>
+                        </div>
+
+                        <table class='checkedtab'>
+                            <tr>
+                                <td><input checked class='changing' id='vnotdel33' name='vnotdel' type='radio' value='0'></td>
+                                <td><label for='vnotdel33'>Нет</label></td>
+                            </tr>
+                            <tr>
+                                <td><input class='changing' id='vnotdel34' name='vnotdel' type='radio' value='5250'></td>
+                                <td><label for='vnotdel34'>Ремонт черновой</label></td>
+                            </tr>
+                            <tr>
+                                <td><input class='changing' id='vnotdel35' name='vnotdel' type='radio' value='9000'></td>
+                                <td><label for='vnotdel35'>Ремонт &quot;под ключ&quot;</label></td>
+                            </tr>
+                            <tr>
+                                <td class='talbot'><input class='changing' id='inzhin36' name='inzhin' type='checkbox' value='2250'></td>
+                                <td class='ital'><label for='inzhin36'>Инженерные системы</label></td>
+                            </tr>
+
+                        </table>
+                    </div>
+                    <div class='large-4 columns'>
+                        <div class='badgers'>
+                            <span class='namebad'>Другое</span>
+                            <span id='priceDrug' class='costbad'>0 руб.</span>
+                        </div>
+
+                        <table class='checkedtab'>
+                            <tr>
+                                <td><input class='changing' id='drug37' name='drug' type='checkbox' value='555'></td>
+                                <td><label for='drug37'>Стяжка пола</label></td>
+                            </tr>
+                            <tr>
+                                <td><input class='changing' id='drug38' name='drug' type='checkbox' value='525'></td>
+                                <td><label for='drug38'>Штукатурка</label></td>
+                            </tr>
+                            <tr>
+                                <td><input class='changing' id='drug39' name='drug' type='checkbox' value='300'></td>
+                                <td><label for='drug39'>Шпаклевка</label></td>
+                            </tr>
+
+                        </table>
+
+                    </div>
+                    <div class='large-4 columns'>
+                        <div class='itogcalc'>
+                            2 000 000 руб.
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src='/js/calc.js'></script>
+    <script type="text/javascript" src='/js/accounting.min.js'></script>
+</body>
+
+</html>
